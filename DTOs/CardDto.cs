@@ -1,0 +1,13 @@
+namespace Poker.Protocol.DTOs
+{
+    public class CardDto
+    {
+        // 0=Spades, 1=Hearts, 2=Diamonds, 3=Clubs
+        public int Suit { get; set; }
+
+        // 2-10 are face value, 11=J, 12=Q, 13=K, 14=A
+        public int Rank { get; set; }
+
+        public override string ToString() => $"{Rank} of {Suit}";
+    }
+}
