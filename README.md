@@ -1,7 +1,4 @@
 # PokerProtocol
-This documentation provides a technical overview of the Poker.Protocol library as developed so far. The protocol is designed as a C# class library that serves as a shared "contract" between the game server and the client.
-
-Architectural Overview
 
 The protocol follows a Server-Authoritative model using a typed message system. It is structured to handle real-time, bidirectional communication, typically intended for use over WebSockets.
 
