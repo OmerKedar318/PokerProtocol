@@ -36,7 +36,7 @@ Server Events:
 
 PrivateCardsEvent.cs: A secure message sent only to a specific player containing their "hole" cards.
 
-RoundEndEvent.cs: A detailed summary sent at the end of a hand. It includes a WinnerDto list (supporting split pots), the HandRankName (e.g., "Full House"), and a dictionary of RevealedHands for the "Showdown".
+RoundEndEvent.cs: A detailed summary sent at the end of a round. It includes a WinnerDto list (supporting split pots), the HandRankName (e.g., "Full House"), and a dictionary of RevealedHands for the "Showdown".
 
 4. Serialization & Registry
 
