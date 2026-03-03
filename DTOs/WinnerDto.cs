@@ -7,7 +7,7 @@
         public string HandRankName { get; set; }
         public List<CardDto> WinningHand {  get; set; }
 
-        public class WinnerDto(string PlayerId, int AmountWon, string HandRankName, List<CardDto> WinningHand)
+        public WinnerDto(string PlayerId, int AmountWon, string HandRankName, List<CardDto> WinningHand)
         {
             this.PlayerId = PlayerId;
             this.AmountWon = AmountWon;
