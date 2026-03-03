@@ -8,5 +8,13 @@ namespace Poker.Protocol.Responses
         public bool Success { get; set; }
         public string ErrorMessage { get; set; }
         public string AssignedSeatId { get; set; }
+
+        public JoinTableResponse(string requestId, bool success, string errorMessage, string assignedSeatId) 
+        {
+            this.RequestId = requestId;
+            this.Success = success;
+            this.ErrorMessage = errorMessage;
+            this.AssignedSeatId = assignedSeatId;
+        }
     }
 }
