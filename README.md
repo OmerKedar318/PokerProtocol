@@ -30,7 +30,7 @@ Client Requests:
 
 JoinTableRequest.cs: Used by a player to request a seat at a specific table.
 
-BetRequest.cs / RaiseRequest.cs / FoldRequest.cs: Standard poker actions sent to the server for validation.
+CheckRequest.cs / RaiseRequest.cs / FoldRequest.cs: Standard poker actions sent to the server for validation.
 
 Server Events:
 
