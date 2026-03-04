@@ -152,3 +152,54 @@ GenericResponse.cs: A standard acknowledgement for actions, containing a Success
   "Success": false,
   "ErrorMessage": "Insufficient chips for this bet."
 }
+
+
+To visualize how a hand of poker moves through your system, here is the chronological workflow using the messages you've built. This sequence ensures that the server remains the "Source of Truth" while the clients stay synchronized.
+
+
+Phase 1: Joining & Initialization
+
+Before the cards are dealt, the players must be seated and synced.
+
+JoinTableRequest: The client sends player details and preferred table.
+
+JoinTableResponse: The server validates the seat and returns a success message with the AssignedSeatId.
+
+GameStateEvent: The server broadcasts the updated table state to all players so everyone sees the new person sitting down.
+
+
+Phase 2: The Deal (Pre-Flop)
+
+The server starts the hand logic.
+
+PrivateCardsEvent: The server sends individual messages to each player at the table.
+
+Note: Player A only receives Player A's cards; Player B only receives Player B's cards.
+
+GameStateEvent: The server broadcasts that the round has started, identifies the Dealer, Small Blind, and Big Blind, and sets the ActivePlayerId to the person "Under the Gun."
+
+
+Phase 3: The Betting Rounds
+
+This phase repeats for the Pre-flop, Flop, Turn, and River.
+
+GameStateEvent: The server notifies everyone whose turn it is.
+
+BetRequest / RaiseRequest / FoldRequest: The active player sends their "Intent" to the server.
+
+GenericResponse: The server validates the move (e.g., checking if they have enough chips) and sends a confirmation to that player.
+
+GameStateEvent: The server broadcasts the move to the whole table, updating the pot size and moving the ActivePlayerId to the next person.
+
+
+Phase 4: The Showdown & Cleanup
+
+Once all betting is finished after the River, or if a player goes all-in and is called.
+
+RoundEndEvent: The server calculates the winner(s) and sends this final packet.
+
+Winners: List of who gets the chips and their hand rank (e.g., "Straight").
+
+RevealedHands: The server now shares the hole cards of everyone who didn't fold so the UI can flip them over.
+
+GameStateEvent: After a short delay (for the "Win" animation), the server resets the board and starts the next hand.
