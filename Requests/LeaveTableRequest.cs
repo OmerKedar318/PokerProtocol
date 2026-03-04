@@ -2,7 +2,7 @@
 
 namespace Poker.Protocol.Requests
 {
-    public class LeaveTableRequest : NetworkMessage, IRequest
+    public class LeaveTableRequest : Request
     {
         public string PlayerName { get; set; }
 
