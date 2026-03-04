@@ -6,7 +6,7 @@ namespace Poker.Protocol.Requests
     {
         public string PlayerName { get; set; }
 
-        public LeaveTableRequest(string playerName) 
+        public LeaveTableRequest(string playerName) : base(RequestType.LeaveTableRequest.type)
         {
             this.PlayerName = playerName;
         }

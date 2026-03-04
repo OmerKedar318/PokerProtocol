@@ -9,6 +9,7 @@ namespace Poker.Protocol.Abstractions
         RaiseRequest("RaiseRequest"),
 
         public const string type;
+
         RequestType(string type) {
             this.type = type;
         } 
