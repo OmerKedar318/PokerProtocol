@@ -1,6 +1,6 @@
 # PokerProtocol
 
-The protocol follows a Server-Authoritative model using a typed message system. It is structured to handle real-time, bidirectional communication, typically intended for use over WebSockets.
+The protocol follows a Server-Authoritative model using a typed message system. It is structured to handle real-time, bidirectional communication, intended for use over WebSockets.
 
 1. Core Abstractions
 
