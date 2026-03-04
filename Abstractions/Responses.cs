@@ -1,4 +1,4 @@
-namespace Poker.Protocol.Requests
+namespace Poker.Protocol.Abstractions
 {
     public enum ResponseType
     {
