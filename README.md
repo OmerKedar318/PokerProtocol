@@ -45,6 +45,7 @@ JoinTableRequest.cs: Used by a player to request a seat at a specific table.
   "TableId": "Vegas_High_Stakes"
 }
 
+Bet request is when user needs to bet money to continue playing, if the bet amount is 0 it will be regarded as check.
 BetRequest.cs:
 
 {
