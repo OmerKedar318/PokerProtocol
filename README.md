@@ -164,7 +164,7 @@ GenericResponse.cs: A standard acknowledgement for actions, containing a Success
 }
 
 
-To visualize how a hand of poker moves through your system, here is the chronological workflow using the messages you've built. This sequence ensures that the server remains the "Source of Truth" while the clients stay synchronized.
+To visualize how a hand of poker moves through the system, here is the chronological workflow using the messages we've built. This sequence ensures that the server remains the "Source of Truth" while the clients stay synchronized.
 
 
 Phase 1: Joining & Initialization
