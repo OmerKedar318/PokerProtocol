@@ -4,7 +4,7 @@ namespace Poker.Protocol.Requests
 {
     public class BetRequest : Request
     {
-        public string PlayerName { get; set; }
+        private string PlayerName { get; set; }
 
         public BetRequest(string playerName) : base(RequestType.BetRequest.type)
         {

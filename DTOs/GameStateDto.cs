@@ -2,13 +2,13 @@ namespace Poker.Protocol.DTOs
 {
     public class GameStateDto
     {
-        public List<PlayerStateDto> Players { get; set; }
-        public List<CardDto> Deck { get; set; } = new List<CardDto>();
-        public List<CardDto> CommunityCards { get; set; }
-        public int PotSize { get; set; }
-        public int CurrentBet { get; set; }
-        public string ActivePlayerId { get; set; }
-        public GameStage Stage { get; set; } // Enum: PreFlop, Flop, etc.
+        private List<PlayerStateDto> Players { get; set; }
+        private List<CardDto> Deck { get; set; } = new List<CardDto>();
+        private List<CardDto> CommunityCards { get; set; }
+        private int PotSize { get; set; }
+        private int CurrentBet { get; set; }
+        private string ActivePlayerId { get; set; }
+        private GameStage Stage { get; set; } // Enum: PreFlop, Flop, etc.
 
         public GameStateDto()
         {

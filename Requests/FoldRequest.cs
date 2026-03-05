@@ -4,7 +4,7 @@ namespace Poker.Protocol.Requests
 {
     public class FoldRequest : Request
     {
-        public string PlayerId { get; set; }
+        private string PlayerId { get; set; }
 
         public FoldRequest(string playerId) : base(RequestType.FoldRequest.type)
         {

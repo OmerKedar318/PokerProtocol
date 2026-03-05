@@ -1,6 +1,6 @@
 namespace Poker.Protocol.Requests
 {
-    public enum Events {
+    public enum EventType {
 
         GameState("GameState"),
         GameEnded("GameEnded"),
@@ -8,8 +8,8 @@ namespace Poker.Protocol.Requests
 
         public const string type;
 
-        Events(string type) {
+        private Events(string type) {
             this.type = type;
+        }
     }
-}
 }
