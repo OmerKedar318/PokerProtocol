@@ -72,7 +72,6 @@ FoldRequest.cs:
   "RequestId": "req_8823"
 }
 
-//omer add this
 Host will send this request to start the round, it will be sent after all players have joined and are ready, and before the server sends the PrivateCardsEvent to deal the hole cards.
 StartRoundRequest.cs:
 {
