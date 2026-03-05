@@ -45,6 +45,7 @@ JoinTableRequest.cs: Used by a player to request a seat at a specific table.
   "TableId": "Vegas_High_Stakes"
 }
 
+Bet request is when user needs to bet money to continue playing, if the bet amount is 0 it will be regarded as check.
 BetRequest.cs:
 
 {
@@ -69,6 +70,15 @@ FoldRequest.cs:
   "MessageType": "FoldRequest",
   "Timestamp": 1709574300,
   "RequestId": "req_8823"
+}
+
+//omer add this
+Host will send this request to start the round, it will be sent after all players have joined and are ready, and before the server sends the PrivateCardsEvent to deal the hole cards.
+StartRoundRequest.cs:
+{
+  "MessageType": "StartRoundRequest",
+  "Timestamp": 1709574005,
+  "RequestId": "req_8820"
 }
 
 Server Events:
@@ -132,7 +142,7 @@ MessageDeserializer.cs: The engine that converts raw JSON into actionable Networ
 
 5. Responses
 
-JoinTableResponse.cs: Confirms if a player successfully joined a table and provides their assigned seat ID.
+JoinTableResponse.cs: Confirms if a player successfully joined a table and provides their assigned seat ID, and returns a flags IsHost so user will know if he is the host of the table.
 
 {
   "MessageType": "JoinTableResponse",
@@ -141,6 +151,7 @@ JoinTableResponse.cs: Confirms if a player successfully joined a table and provi
   "Success": true,
   "ErrorMessage": null,
   "AssignedSeatId": "Seat_4"
+  "IsHost": true"
 }
 
 GenericResponse.cs: A standard acknowledgement for actions, containing a Success boolean and an ErrorMessage if an action (like a bet) was invalid.

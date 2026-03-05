@@ -2,11 +2,11 @@ using Poker.Protocol.Abstractions;
 
 namespace Poker.Protocol.Requests
 {
-    public class FoldRequest : NetworkMessage, IRequest
+    public class FoldRequest : Request
     {
         public string PlayerId { get; set; }
 
-        public FoldRequest(string playerId)
+        public FoldRequest(string playerId) : base(RequestType.FoldRequest.type)
         {
             this.PlayerId = playerId;
         }
