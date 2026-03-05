@@ -2,10 +2,10 @@
 {
     public class WinnerDto
     {
-        public string PlayerId { get; set; }
-        public int AmountWon { get; set; }
-        public string HandRankName { get; set; }
-        public List<CardDto> WinningHand {  get; set; }
+        private string PlayerId { get; set; }
+        private int AmountWon { get; set; }
+        private string HandRankName { get; set; }
+        private List<CardDto> WinningHand {  get; set; }
 
         public WinnerDto(string PlayerId, int AmountWon, string HandRankName, List<CardDto> WinningHand)
         {

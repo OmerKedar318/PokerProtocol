@@ -6,9 +6,9 @@ namespace Poker.Protocol.Abstractions
         JoinTable("JoinTable"),
 
         public const string type;
-        ResponseType(string type)
+        private ResponseType(string type)
         {
             this.type = type;
+        }
     }
-}
 }

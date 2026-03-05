@@ -2,10 +2,10 @@ using Poker.Protocol.Abstractions;
 
 namespace Poker.Protocol.Responses
 {
-    public class GenericResponse : NetworkMessage, IResponse
+    public class GenericResponse : IResponse
     {
-        public bool Success { get; set; }
-        public string Error { get; set; }
+        private bool Success { get; set; }
+        private string Error { get; set; }
 
         public GenericResponse(bool Success, string Error) 
         {

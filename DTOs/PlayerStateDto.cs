@@ -2,11 +2,11 @@ namespace Poker.Protocol.DTOs
 {
     public class PlayerStateDto
     {
-        public string PlayerId { get; set; }
-        public string Name { get; set; }
-        public int Chips { get; set; }
-        public int CurrentBet { get; set; }
-        public bool HasFolded { get; set; }
+        private string PlayerId { get; set; }
+        private string Name { get; set; }
+        private int Chips { get; set; }
+        private int CurrentBet { get; set; }
+        private bool HasFolded { get; set; }
 
         public PlayerStateDto(string PlayerId, string Name, int Chips, int CurrentBet)
         {
