@@ -3,7 +3,7 @@ using Poker.Protocol.DTOs;
 
 namespace Poker.Protocol.Events
 {
-    public class GameStateEvent : NetworkMessage, IEvent
+    public class GameStateEvent : Event
     {
         private List<PlayerStateDto> Players { get; set; }
         private List<CardDto> CommunityCards { get; set; }
@@ -11,7 +11,7 @@ namespace Poker.Protocol.Events
         private string CurrentTurnPlayerId { get; set; }
         private string Phase { get; set; }
 
-        public GameStateEvent(List<PlayerStateDto> players, List<CardDto> communityCards, int pot, string currentTurnPlayerId, string phase)
+        public GameStateEvent(List<PlayerStateDto> players, List<CardDto> communityCards, int pot, string currentTurnPlayerId, string phase) : base(EventType.GameState)
         {
             this.Players = players;
             this.CommunityCards = communityCards;

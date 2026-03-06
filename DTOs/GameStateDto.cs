@@ -24,7 +24,7 @@ namespace Poker.Protocol.DTOs
             PotSize = 0;
             CurrentBet = 0;
             ActivePlayerId = "";
-            GameStage = null; // Change!
+            Stage = null; // Change!
         }
 
         public void Shuffle()
@@ -45,5 +45,10 @@ namespace Poker.Protocol.DTOs
             Deck.RemoveAt(Deck.Count - 1);
             return dealt;
         }
+    }
+
+    public sealed record GameStage
+    {
+
     }
 }

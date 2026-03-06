@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Poker.Protocol.Events
 {
-    public class RoundEndEvent : NetworkMessage, IEvent
+    public class RoundEndEvent : Event
     {
         private List<WinnerDto> Winners { get; set; } = new List<WinnerDto>();
         // Key: PlayerId, Value: Their 2 cards
@@ -12,7 +12,7 @@ namespace Poker.Protocol.Events
         private List<CardDto> FinalCommunityCards { get; set; } = new List<CardDto>();
         private int TotalPot { get; set; }
 
-        public RoundEndEvent(List<WinnerDto> winners, Dictionary<string, List<CardDto>> revealHands, List<CardDto> finalCommunityCards, int totalPot) 
+        public RoundEndEvent(List<WinnerDto> winners, Dictionary<string, List<CardDto>> revealHands, List<CardDto> finalCommunityCards, int totalPot, EventType type) : base(type) 
         {
             this.Winners = winners;
             this.RevealedHands = revealHands;

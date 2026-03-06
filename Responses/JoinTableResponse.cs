@@ -2,7 +2,7 @@
 
 namespace Poker.Protocol.Responses
 {
-    public class JoinTableResponse : IResponse
+    public class JoinTableResponse : Response
     {
         private string RequestId { get; set; } // Matches the RequestId from JoinTableRequest
         private bool Success { get; set; }
@@ -10,7 +10,7 @@ namespace Poker.Protocol.Responses
         private string AssignedSeatId { get; set; }
         private bool IsHost {get; set; }
 
-        public JoinTableResponse(string requestId, bool success, string errorMessage, string assignedSeatId, bool IsHost) 
+        public JoinTableResponse(string requestId, bool success, string errorMessage, string assignedSeatId, bool IsHost) : base(ResponseType.JoinTable, requestId)
         {
             this.RequestId = requestId;
             this.Success = success;

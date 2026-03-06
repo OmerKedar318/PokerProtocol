@@ -1,15 +1,19 @@
-namespace Poker.Protocol.Requests
+namespace Poker.Protocol.Abstractions
 {
-    public enum EventType {
 
-        GameState("GameState"),
-        GameEnded("GameEnded"),
-        RoundEnded("RoundEnded"),
+    public sealed record EventType
+    {
+        public static readonly EventType GameState = new EventType("GameState");
+        public static readonly EventType PrivateCards = new EventType("PrivateCards");
+        public static readonly EventType RoundEnd = new EventType("RoundEnd");
 
-        public const string type;
+        public string Type { get; }
 
-        private Events(string type) {
-            this.type = type;
+        private EventType(string type)
+        {
+            Type = type;
         }
+
+        public override string ToString() => Type;
     }
 }
