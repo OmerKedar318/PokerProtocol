@@ -7,7 +7,7 @@ namespace Poker.Protocol.Requests
         private string PlayerName { get; set; }
         private int Amount { get; set; }
 
-        public RaiseRequest(string playerName, int amount) : base(RequestType.RaiseRequest.type)
+        public RaiseRequest(string playerName, int amount) : base(RequestType.RaiseRequest)
         {
             this.PlayerName = playerName;
             this.Amount = amount;

@@ -6,7 +6,7 @@ namespace Poker.Protocol.Requests
     {
         private string PlayerName { get; set; }
 
-        public BetRequest(string playerName) : base(RequestType.BetRequest.type)
+        public BetRequest(string playerName) : base(RequestType.BetRequest)
         {
             this.PlayerName = playerName;
         }

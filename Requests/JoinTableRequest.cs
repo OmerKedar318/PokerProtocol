@@ -7,7 +7,7 @@ namespace Poker.Protocol.Requests
         private string PlayerName { get; set; }
         private string TableId { get; set; }
 
-        public JoinTableRequest(string playerName, string tableId) : base(RequestType.JoinTableRequest.type)
+        public JoinTableRequest(string playerName, string tableId) : base(RequestType.JoinTableRequest)
         {
             this.PlayerName = playerName;
             this.TableId = tableId;
